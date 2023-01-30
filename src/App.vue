@@ -21,6 +21,14 @@ export default {
   computed: {
     trackAndTraceOptions() {
       return {
+        customTranslations: {
+          sv: {
+            more: 'VISA MER',
+            // '' or null results in original text rendering.
+            containsOf: ' ',
+            deliveries: 'paket',
+          },
+        },
         onRendered: () => {
           this.timesRendered++;
           import('./parcellabs.styl');
