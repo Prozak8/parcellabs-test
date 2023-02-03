@@ -45,6 +45,8 @@ export default {
       const orderStatusContainer = document.querySelector('.pl-icon-hr-container');
 
       const orderStatusIcons = Array.from(orderStatusContainer.children).filter(el => el.childNodes.length);
+      orderStatusIcons.forEach((el) => (el.style.display = "none"));
+      orderStatusContainer.firstChild.style.display = "none";
       orderStatusContainer.id = 'order-status-container';
 
       const orderStatusIndex = orderStatusIcons.map(el => {
@@ -79,7 +81,6 @@ export default {
         labelContainer.appendChild(span);
       });
 
-      orderStatusContainer.textContent = '';
       orderStatusContainer.appendChild(header);
       orderStatusContainer.appendChild(loadingBar);
       orderStatusContainer.appendChild(labelContainer);
